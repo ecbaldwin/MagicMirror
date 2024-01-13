@@ -260,7 +260,10 @@ Module.register("calendar", {
 
 					const dateCell = document.createElement("td");
 					dateCell.colSpan = "3";
-					dateCell.innerHTML = dateAsString;
+					let dateDisplay = dateAsString;
+					if (event.today) dateDisplay = "Today";
+					else if (event.tomorrow) dateDisplay = "Tomorrow";
+					dateCell.innerHTML = dateDisplay;
 					dateCell.style.paddingTop = "10px";
 					dateRow.appendChild(dateCell);
 					wrapper.appendChild(dateRow);
