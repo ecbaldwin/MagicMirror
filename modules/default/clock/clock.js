@@ -111,6 +111,7 @@ Module.register("clock", {
 		 * Create wrappers for DIGITAL clock
 		 */
 		const dateWrapper = document.createElement("div");
+		const timeOfDayWrapper = document.createElement("div");
 		const timeWrapper = document.createElement("div");
 		const secondsWrapper = document.createElement("sup");
 		const periodWrapper = document.createElement("span");
@@ -120,6 +121,7 @@ Module.register("clock", {
 
 		// Style Wrappers
 		dateWrapper.className = "date normal medium";
+		timeOfDayWrapper.className = "timeofday normal medium";
 		timeWrapper.className = "time bright large light";
 		secondsWrapper.className = "seconds dimmed";
 		sunWrapper.className = "sun dimmed small";
@@ -151,6 +153,17 @@ Module.register("clock", {
 			dateWrapper.innerHTML = now.format(this.config.dateFormat);
 			digitalWrapper.appendChild(dateWrapper);
 		}
+
+		let hours = now.toDate().getHours();
+		let timeOfDayString = "";
+		if (22 <= hours) timeOfDayString = "night";
+		else if (17 <= hours) timeOfDayString = "evening";
+		else if (13 <= hours) timeOfDayString = "afternoon";
+		else if (11 <= hours) timeOfDayString = "noon";
+		else if (5 <= hours) timeOfDayString = "morning";
+		else timeOfDayString = "before dawn";
+		timeOfDayWrapper.innerHTML = timeOfDayString;
+		digitalWrapper.appendChild(timeOfDayWrapper);
 
 		if (this.config.displayType !== "analog" && this.config.showTime) {
 			timeWrapper.innerHTML = timeString;

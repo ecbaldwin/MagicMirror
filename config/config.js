@@ -22,7 +22,7 @@ let config = {
 
     modules: [{
         module: "clock",
-        position: "top_left",
+        position: "top_bar",
         config: {
             displaySeconds: false,
             dateFormat: "dddd, MMMM Do",
@@ -36,7 +36,7 @@ let config = {
             limitDays: 2,
             timeFormat: "dateheaders",
             calendars: [{
-                fetchInterval: 15 * 60 * 1000,
+                fetchInterval: 5 * 60 * 1000,
                 symbol: "calendar-check",
                 url: "https://calendar.google.com/calendar/ical/c_5a2f9c7739dc5a8e6f01ea70476efab35856764631f141ee20ca654019d79a2f%40group.calendar.google.com/private-29af58715f58759b1dddda1f11568098/basic.ics"
             }, {
