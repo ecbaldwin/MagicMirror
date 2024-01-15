@@ -307,7 +307,7 @@ Module.register("calendar", {
 				}
 
 				const symbolClass = this.symbolClassForUrl(event.url);
-				symbolWrapper.className = `symbol align-right ${symbolClass}`;
+				symbolWrapper.className = `symbol align-left ${symbolClass}`;
 
 				const symbols = this.symbolsForEvent(event);
 				symbols.forEach((s, index) => {
@@ -380,7 +380,9 @@ Module.register("calendar", {
 				if (this.config.flipDateHeaderTitle) eventWrapper.appendChild(titleWrapper);
 
 				if (event.fullDayEvent) {
-					titleWrapper.colSpan = "2";
+					let emptyWrapper = document.createElement("td");
+					emptyWrapper.innerHTML = "&nbsp;";
+					eventWrapper.appendChild(emptyWrapper);
 					titleWrapper.classList.add("align-left");
 				} else {
 					const timeWrapper = document.createElement("td");
@@ -396,7 +398,7 @@ Module.register("calendar", {
 
 					eventWrapper.appendChild(timeWrapper);
 
-					if (!this.config.flipDateHeaderTitle) titleWrapper.classList.add("align-right");
+					if (!this.config.flipDateHeaderTitle) titleWrapper.classList.add("align-left");
 				}
 				if (!this.config.flipDateHeaderTitle) eventWrapper.appendChild(titleWrapper);
 			} else {

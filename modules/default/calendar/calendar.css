@@ -1,7 +1,10 @@
+.calendar.module {
+    width: 100%;
+}
+
 .calendar .symbol {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  width: 100%;
+  display: block;
   padding-left: 0;
   padding-right: 10px;
   font-size: var(--font-size-small);

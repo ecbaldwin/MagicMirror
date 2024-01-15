@@ -239,3 +239,7 @@ sup {
   border-spacing: 0;
   border-collapse: separate;
 }
+
+.region.left {
+    width: 100%;
+}
