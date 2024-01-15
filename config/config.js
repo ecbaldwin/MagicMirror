@@ -41,7 +41,7 @@ let config = {
                 url: "https://calendar.google.com/calendar/ical/c_5a2f9c7739dc5a8e6f01ea70476efab35856764631f141ee20ca654019d79a2f%40group.calendar.google.com/private-29af58715f58759b1dddda1f11568098/basic.ics"
             }, {
                 fetchInterval: 7 * 24 * 60 * 60 * 1000,
-                symbol: "calendar-check",
+                symbol: "star",
                 url: "https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics"
             }]
         }
