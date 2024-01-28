@@ -45,6 +45,24 @@ let config = {
                 url: "https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics"
             }]
         }
+    }, {
+        module: "weather",
+        header: "Weather",
+        position: "bottom_left",
+        config: {
+            weatherProvider: "weathergov",
+            type: "current",
+            onlyTemp: true,
+            apiBase: "https://api.weather.gov/points/",
+            lat: 40.90492,
+            lon: -111.87477,
+
+            // type: "current",
+            // weatherEndpoint: "onecall",
+            // lat: 40.90492,
+            // lon: -111.87477,
+            // apiKey: "1685e7034b5f50c57fc0ab96c53d57c2",
+        }
     }]
 };
 
