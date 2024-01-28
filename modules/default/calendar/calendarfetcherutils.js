@@ -295,6 +295,7 @@ const CalendarFetcherUtils = {
 						if (JSON.stringify(d) === "null") return false;
 						else return true;
 					});
+					dates = dates.slice(0, 1);
 					// The "dates" array contains the set of dates within our desired date range range that are valid
 					// for the recurrence rule. *However*, it's possible for us to have a specific recurrence that
 					// had its date changed from outside the range to inside the range.  For the time being,
@@ -617,3 +618,5 @@ const CalendarFetcherUtils = {
 if (typeof module !== "undefined") {
 	module.exports = CalendarFetcherUtils;
 }
+
+// vim:listchars=tab\:.\ ,trail\:*,extends\:<,precedes\:>,nbsp\:_,lead\:\ ,leadmultispace\:\ ,multispace\:·:
